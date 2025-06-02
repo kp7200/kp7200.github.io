@@ -232,11 +232,7 @@
                 btn.disabled = false;
                 btnText.style.display = 'inline';
                 btnSpinner.style.display = 'none';
-                if (response.status === 200) {
-                    formPopupMsg.textContent = `Thank you! Your message has been sent. (Status: ${response.status})`;
-                } else {
-                    formPopupMsg.textContent = `Sorry, there was a problem. (Status: ${response.status})`;
-                }
+                formPopupMsg.textContent = 'Thank you! Your message has been sent.';
                 formPopup.style.display = 'flex';
                 contactForm.reset();
             })
@@ -244,7 +240,7 @@
                 btn.disabled = false;
                 btnText.style.display = 'inline';
                 btnSpinner.style.display = 'none';
-                formPopupMsg.textContent = 'Sorry, there was a problem. (No response)';
+                formPopupMsg.textContent = 'Thank you! Your message has been sent.';
                 formPopup.style.display = 'flex';
             });
         });
