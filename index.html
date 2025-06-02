@@ -7,6 +7,61 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script>
+    // Always reset scroll position to top on refresh and navigation
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    };
+    window.onload = function () {
+        setTimeout(function() { window.scrollTo(0, 0); }, 1);
+    };
+    localStorage.removeItem('theme');
+    </script>
+    <section class="fullscreen-cover" id="fullscreenCover">
+        <!-- Cover image removed -->
+        <div class="hero-overlay">
+            <div class="hero-top-row">
+                <nav class="hero-nav">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#certifications">Certifications</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <button id="theme-toggle" aria-label="Toggle theme">
+                    <svg id="theme-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="5.5" stroke="currentColor" stroke-width="2"/>
+                        <g id="sun-rays">
+                            <line x1="12" y1="2" x2="12" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="12" y1="20" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="2" y1="12" x2="4" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="20" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </g>
+                        <g id="moon" style="opacity:0;">
+                            <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" fill="currentColor"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div class="hero-center">
+                <div class="profile-photo-wrapper hero-profile">
+                    <img src="assets/images/profile.jpg" alt="Profile Photo" class="profile-photo">
+                </div>
+                <div class="main-title">Keval Parakhiya</div>
+                <div class="subtitle">QA Engineer | Automation &amp; Manual Testing<br>Driving Software Quality</div>
+            </div>
+        </div>
+        <button class="scroll-down-btn" id="scrollDownBtn" aria-label="Scroll down">
+            <span class="chevron-icon" aria-hidden="true">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+            </span>
+        </button>
+    </section>
     <svg class="bg-blob top-left" width="480" height="480" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
@@ -17,50 +72,36 @@
         <ellipse cx="240" cy="240" rx="220" ry="180" fill="url(#grad1)"/>
     </svg>
     <div class="splash-screen" id="splashScreen">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 24px;">
-            <circle cx="28" cy="28" r="24" stroke="#7dd3fc" stroke-width="4" opacity="0.2"/>
-            <circle cx="28" cy="28" r="24" stroke="#7dd3fc" stroke-width="4" stroke-linecap="round" stroke-dasharray="120" stroke-dashoffset="60">
-                <animateTransform attributeName="transform" type="rotate" from="0 28 28" to="360 28 28" dur="1s" repeatCount="indefinite"/>
-            </circle>
-        </svg>
-        <div>Welcome to Keval Parakhiya's Portfolio</div>
+        <div class="splash-content">
+            <div class="splash-logo">
+                <svg class="splash-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="splash-circle" cx="50" cy="50" r="45" stroke="url(#splashGradient)" stroke-width="4"/>
+                    <path class="splash-path" d="M30 50 L45 65 L70 35" stroke="url(#splashGradient)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="splashGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#A259FF"/>
+                            <stop offset="100%" stop-color="#00CFFF"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="splash-text">
+                <h1 class="splash-title">Keval Parakhiya</h1>
+                <p class="splash-subtitle">QA Engineer Portfolio</p>
+            </div>
+            <div class="splash-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        <div class="splash-background">
+            <div class="gradient-blob blob1"></div>
+            <div class="gradient-blob blob2"></div>
+            <div class="gradient-blob blob3"></div>
+        </div>
     </div>
     <div class="container">
-        <div class="header-flex">
-            <div class="header-titles">
-                <div class="main-title">Keval Parakhiya</div>
-                <div class="subtitle">QA Engineer | Automation &amp; Manual Testing<br>Driving Software Quality</div>
-            </div>
-            <div class="profile-photo-wrapper">
-                <img src="assets/images/profile.jpg" alt="Profile Photo" class="profile-photo">
-            </div>
-        </div>
-        <div class="nav-row">
-            <nav>
-                <a href="#about"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 16c0-2.5 3-4 7-4s7 1.5 7 4"/></svg>About</a>
-                <a href="#projects"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="12" height="12" rx="2"/><path d="M3 9h12"/></svg>Projects</a>
-                <a href="#certifications"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M9 11v4"/><path d="M7 15h4"/></svg>Certifications</a>
-                <a href="#contact"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="2"/><path d="M2 4l7 6 7-6"/></svg>Contact</a>
-            </nav>
-            <button id="theme-toggle" aria-label="Toggle theme">
-                <svg id="theme-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="5.5" stroke="currentColor" stroke-width="2"/>
-                    <g id="sun-rays">
-                        <line x1="12" y1="2" x2="12" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <line x1="12" y1="20" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <line x1="2" y1="12" x2="4" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <line x1="20" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </g>
-                    <g id="moon" style="opacity:0;">
-                        <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" fill="currentColor"/>
-                    </g>
-                </svg>
-            </button>
-        </div>
         <div class="section-row">
             <div class="section-col" id="about">
                 <h2>About Me</h2>
@@ -99,7 +140,9 @@
         <h2 id="projects">Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <img src="assets/images/swag-labs.png" alt="Swag Labs">
+                <div class="project-image-wrapper">
+                    <img src="assets/images/swag-labs.png" alt="Swag Labs">
+                </div>
                 <div class="project-content">
                     <h3>Swag Labs</h3>
                     <p>Automated end-to-end tests for Swag Labs demo e-commerce site.</p>
@@ -112,7 +155,9 @@
                 </div>
             </div>
             <div class="project-card">
-                <img src="assets/images/bookstore.png" alt="BookStore">
+                <div class="project-image-wrapper">
+                    <img src="assets/images/bookstore.png" alt="BookStore">
+                </div>
                 <div class="project-content">
                     <h3>BookStore</h3>
                     <p>Automated search feature validation for online bookstore demo site.</p>
@@ -140,14 +185,11 @@
                     <input type="text" name="name" required placeholder="Your Name">
                     <input type="email" name="email" required placeholder="Your Email">
                     <textarea name="message" required placeholder="Your Message"></textarea>
-                    <button type="submit"><span class="btn-text">Send Message</span><span class="btn-spinner" style="display:none;"></span></button>
-                </form>
-                <div id="formPopup" class="form-popup" style="display:none;">
-                    <div class="form-popup-content">
-                        <span id="formPopupClose" class="form-popup-close">&times;</span>
-                        <div id="formPopupMsg">Thank you! Your message has been sent.</div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div id="formSuccessMsg" class="form-success-msg" style="display:none;"></div>
+                        <button type="submit"><span class="btn-text">Send Message</span><span class="btn-spinner" style="display:none;"></span></button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
         <footer>
@@ -169,8 +211,17 @@
         </defs>
         <ellipse cx="240" cy="240" rx="200" ry="160" fill="url(#grad2)"/>
     </svg>
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
     <script src="splash.js"></script>
     <script>
+    // Reset scroll position and theme on every refresh
+    window.scrollTo(0, 0);
+    localStorage.removeItem('theme');
+
     // Theme toggle logic
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
@@ -211,12 +262,11 @@
 
     // Contact form AJAX and popup with spinner
     const contactForm = document.getElementById('contactForm');
-    const formPopup = document.getElementById('formPopup');
-    const formPopupMsg = document.getElementById('formPopupMsg');
-    const formPopupClose = document.getElementById('formPopupClose');
+    const formSuccessMsg = document.getElementById('formSuccessMsg');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            formSuccessMsg.style.display = 'none'; // Hide on new submit
             const btn = contactForm.querySelector('button[type="submit"]');
             const btnText = btn.querySelector('.btn-text');
             const btnSpinner = btn.querySelector('.btn-spinner');
@@ -232,29 +282,63 @@
                 btn.disabled = false;
                 btnText.style.display = 'inline';
                 btnSpinner.style.display = 'none';
-                formPopupMsg.textContent = 'Thank you! Your message has been sent.';
-                formPopup.style.display = 'flex';
+                formSuccessMsg.textContent = 'Thank you! Your message has been sent.';
+                formSuccessMsg.style.display = 'block';
                 contactForm.reset();
             })
             .catch((err) => {
                 btn.disabled = false;
                 btnText.style.display = 'inline';
                 btnSpinner.style.display = 'none';
-                formPopupMsg.textContent = 'Thank you! Your message has been sent.';
-                formPopup.style.display = 'flex';
+                formSuccessMsg.textContent = 'Thank you! Your message has been sent.';
+                formSuccessMsg.style.display = 'block';
             });
         });
     }
-    if (formPopupClose) {
-        formPopupClose.onclick = function() {
-            formPopup.style.display = 'none';
-        };
-    }
-    window.onclick = function(event) {
-        if (event.target === formPopup) {
-            formPopup.style.display = 'none';
+    </script>
+    <script>
+    (function() {
+        var scrollDownBtn = document.getElementById('scrollDownBtn');
+        var splashScreen = document.getElementById('splashScreen');
+        function enableScrollBtn() {
+            if (scrollDownBtn) {
+                scrollDownBtn.onclick = function() {
+                    var container = document.querySelector('.container');
+                    if (container) {
+                        container.scrollIntoView({ behavior: 'smooth' });
+                    }
+                };
+            }
         }
-    };
+        // If splash screen is present, wait until it's hidden
+        if (splashScreen && splashScreen.style.display !== 'none') {
+            var observer = new MutationObserver(function() {
+                if (splashScreen.style.display === 'none') {
+                    enableScrollBtn();
+                    observer.disconnect();
+                }
+            });
+            observer.observe(splashScreen, { attributes: true, attributeFilter: ['style'] });
+        } else {
+            enableScrollBtn();
+        }
+    })();
+    </script>
+    <script>
+    // Scroll to Top Button Logic
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add('show');
+            scrollToTopBtn.classList.remove('hide');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+            scrollToTopBtn.classList.add('hide');
+        }
+    });
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
     </script>
 </body>
 </html> 
