@@ -72,6 +72,7 @@ header {
 
 .subtitle {
     font-size: 1.1rem;
+    font-family: 'Playfair Display', serif; 
     margin-bottom: 2em;
     color: var(--color-subtle);
     text-shadow:
@@ -1064,6 +1065,10 @@ body:not(.light-theme) .contact-form textarea:focus {
     background-clip: unset;
     width: 56px;
     height: 56px;
+    pointer-events: auto;
+}
+.scroll-down-btn * {
+    pointer-events: auto;
 }
 .scroll-down-btn::before, .scroll-down-btn .scroll-text { display: none !important; }
 .chevron-icon {
@@ -1150,6 +1155,25 @@ body.light-theme .fullscreen-cover-img {
     align-items: center;
     pointer-events: none;
 }
+
+/* Entry animation classes for hero elements */
+.hero-animate {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.hero-animate.in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Optional: staggered delays for each element */
+.hero-profile.hero-animate { transition-delay: 0.1s; }
+.main-title.hero-animate { transition-delay: 0.25s; }
+.subtitle.hero-animate { transition-delay: 0.4s; }
+.hero-social-links.hero-animate { transition-delay: 0.55s; }
+.scroll-down-btn.hero-animate { transition-delay: 0.7s; }
+
 .hero-top-row {
     width: 100%;
     display: flex;
@@ -1164,20 +1188,23 @@ body.light-theme .fullscreen-cover-img {
 }
 .hero-nav {
     display: flex;
-    gap: 32px;
-    background: rgba(30,34,44,0.32);
-    border-radius: 999px;
-    padding: 8px 28px;
-    box-shadow: 0 2px 16px 0 rgba(20,129,186,0.10);
-    backdrop-filter: blur(8px) saturate(1.2);
+    gap: 2px;
+    padding: 0 2px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-width: 0;
 }
 .hero-nav a {
+    font-size: 0.82rem;
+    padding: 2px 6px;
+    min-width: 0;
+    margin-left: 6px;
+    margin-right: 0;
     color: #fff;
     font-family: 'Source Sans Pro', 'Segoe UI', Arial, sans-serif;
     font-weight: 600;
-    font-size: 1.08rem;
     text-decoration: none !important;
-    padding: 6px 18px;
     border-radius: 999px;
     transition: all 0.3s ease;
     position: relative;
@@ -1306,15 +1333,19 @@ body.light-theme .fullscreen-cover-img {
         box-sizing: border-box;
     }
     .hero-nav {
-        gap: 6px;
-        padding: 2px 2px;
+        gap: 2px;
+        padding: 0 2px;
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
+        min-width: 0;
     }
     .hero-nav a {
-        font-size: 0.92rem;
-        padding: 4px 8px;
+        font-size: 0.82rem;
+        padding: 2px 6px;
+        min-width: 0;
+        margin-left: 6px;
+        margin-right: 0;
     }
     #theme-toggle {
         width: 36px;
@@ -1499,23 +1530,49 @@ body.light-theme .fullscreen-cover-img {
 .form-success-msg {
     display: block;
     min-width: 120px;
-    max-width: 220px;
+    max-width: 320px;
     color: var(--color-heading, #1481BA);
-    background: rgba(162,89,255,0.08);
+    background: linear-gradient(90deg, #A259FF11 0%, #00CFFF11 100%);
     font-family: 'Source Sans Pro', 'Segoe UI', Arial, sans-serif;
-    font-size: 0.98em;
-    margin-right: 0;
-    margin-left: 0;
-    padding: 8px 14px;
-    border-radius: 8px;
+    font-size: 1.08em;
+    margin: 16px auto 0 auto;
+    padding: 14px 18px;
+    border-radius: 12px;
     letter-spacing: 0.01em;
-    text-align: left;
-    box-shadow: 0 2px 8px 0 rgba(162,89,255,0.06);
+    text-align: center;
+    box-shadow: 0 4px 16px 0 rgba(162,89,255,0.10);
+    border: 1.5px solid var(--color-heading, #1481BA);
     opacity: 1;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, box-shadow 0.3s;
     animation: fadeInSuccess 0.5s;
+    z-index: 10;
+}
+body.light-theme .form-success-msg {
+    color: #fff;
+    background: linear-gradient(90deg, #1481BA 0%, #11B5E4 100%);
+    border: 1.5px solid #1481BA;
+    box-shadow: 0 4px 16px 0 rgba(20,129,186,0.10);
+}
+@media (max-width: 600px) {
+    .form-success-msg {
+        font-size: 0.98em;
+        padding: 10px 8px;
+        min-width: 0;
+        max-width: 98vw;
+    }
 }
 @keyframes fadeInSuccess {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: none; }
+}
+
+/* Entry animation for cards on scroll */
+.card-animate {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.card-animate.in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }

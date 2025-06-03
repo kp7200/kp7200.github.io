@@ -23,6 +23,7 @@
             <div class="hero-top-row">
                 <nav class="hero-nav">
                     <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
                     <a href="#certifications">Certifications</a>
                     <a href="#contact">Contact</a>
@@ -47,14 +48,42 @@
                 </button>
             </div>
             <div class="hero-center">
-                <div class="profile-photo-wrapper hero-profile">
+                <div class="profile-photo-wrapper hero-profile hero-animate">
                     <img src="assets/images/profile.jpg" alt="Profile Photo" class="profile-photo">
                 </div>
-                <div class="main-title">Keval Parakhiya</div>
-                <div class="subtitle">QA Engineer | Automation &amp; Manual Testing<br>Driving Software Quality</div>
+                <div class="main-title hero-animate">Keval Parakhiya</div>
+                <div class="subtitle hero-animate"> Test Engineer | Automation &amp; Manual</div>
+                <div class="hero-social-links hero-animate" style="display:flex;justify-content:center;gap:24px;margin-top:18px;">
+                    <a href="https://www.linkedin.com/in/kevalparakhiya" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:inline-block;transition:transform 0.3s;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="url(#linkedinGradient)" stroke="none" style="vertical-align:middle;">
+                            <defs>
+                                <linearGradient id="linkedinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#A259FF"/>
+                                    <stop offset="100%" stop-color="#00CFFF"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="2" y="2" width="20" height="20" rx="5"/>
+                            <line x1="7" y1="10" x2="7" y2="17" stroke="white" stroke-width="2"/>
+                            <line x1="7" y1="7" x2="7" y2="7.01" stroke="white" stroke-width="2"/>
+                            <line x1="12" y1="10" x2="12" y2="17" stroke="white" stroke-width="2"/>
+                            <path d="M17 17v-3a2 2 0 0 0-4 0" stroke="white" stroke-width="2"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/kp7200" target="_blank" rel="noopener" aria-label="GitHub" style="display:inline-block;transition:transform 0.3s;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="url(#githubGradient)" stroke="none" style="vertical-align:middle;">
+                            <defs>
+                                <linearGradient id="githubGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#A259FF"/>
+                                    <stop offset="100%" stop-color="#00CFFF"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.48 2.87 8.28 6.84 9.63.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
-        <button class="scroll-down-btn" id="scrollDownBtn" aria-label="Scroll down">
+        <button class="scroll-down-btn hero-animate" id="scrollDownBtn" aria-label="Scroll down">
             <span class="chevron-icon" aria-hidden="true">
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"/>
@@ -103,43 +132,48 @@
     </div>
     <div class="container">
         <div class="section-row">
-            <div class="section-col" id="about">
+            <div class="section-col card-animate" id="about">
                 <h2>About Me</h2>
                 <p>Hi! I'm Keval, a passionate QA Engineer with 4+ years of experience in manual and automation testing. I have expertise in developing robust test strategies, designing and executing test cases, and ensuring software quality across web and mobile platforms.
                     I've worked on high-impact projects like the Meta (Facebook) family of apps at Tech Mahindra, where I've led GDPR compliance testing, API testing, and team coordination. I'm always eager to learn new tools and approaches to make testing smarter and more efficient.</p>
             </div>
-            <div class="section-col" id="skills">
+            <div class="section-col card-animate" id="skills">
                 <h2>Skills</h2>
                 <ul>
                     <li>Automation Testing (Selenium WebDriver, Java, Python)</li>
+                    <li>Manual Testing (Regression, Smoke, Sanity, Adhoc, Exploratory, Accessibility, GDPR)</li>
                     <li>API Testing (Postman, REST APIs)</li>
                     <li>Database Testing (SQL, SQL Workbench)</li>
                     <li>Test Planning, Execution, Reporting</li>
-                    <li>Defect Management (Jira, Meta's Internal Tools)</li>
-                    <li>Agile & SDLC</li>
+                    <li>Defect Management (Jira, Other Internal Tools)</li>
+                    <li>Agile & SDLC Methodolodies</li>
                     <li>Client Communication, Team Leadership</li>
                 </ul>
             </div>
         </div>
         <div class="section-row">
-            <div class="section-col">
+            <div class="section-col card-animate" id="experience">
                 <h2>Professional Experience</h2>
-                <b>Tech Mahindra (Jan 2027 – Present)</b>
+                <b>Tech Mahindra (Jan 2022 – May 2025)</b>
                 <ul>
-                    <li>POC for the team: CDPR Testing, Client Communication</li>
-                    <li>Test Pienning: Test Data Maintenance</li>
-                    <li>Project: Meta: Pacebook Apps (Androot, OS, Web; VR)</li>
+                    <li>Point of Contact (POC) for the Team</li>
+                    <li>GDPR (General Data Protection Regulation) Testing</li>
+                    <li>Work management | Client Commmunication</li>
+                    <li>Trainings &amp; reporting to internal & external entities</li>
+                    <li>Test data preparation & maintenance</li>
                 </ul>
                 <b>Lodestone Software (Dec 2020 – Jan 2022)</b>
                 <ul>
-                    <li>Manual Testing, Regression, API Bug Tracking</li>
-                    <li>Project: Meta: Facebook Apps</li>
+                    <li>Manual Testing (Regression, Smoke, Sanity, Adhoc, Exploratory, Accessibility)</li>
+                    <li>Creating & Executing test cases</li>
+                    <li>Bug Investigation, Writing & Filing</li>
+                    <li>Daily bug reports</li>
                 </ul>
             </div>
         </div>
         <h2 id="projects">Projects</h2>
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card card-animate">
                 <div class="project-image-wrapper">
                     <img src="assets/images/swag-labs.png" alt="Swag Labs">
                 </div>
@@ -151,10 +185,10 @@
                         <span class="tool-badge">Java</span>
                         <span class="tool-badge">Maven</span>
                     </div>
-                    <a class="github-btn" href="#">View on GitHub</a>
+                    <a class="github-btn" href="https://github.com/kp7200/TestSite_Swag_Labs" target="_blank">View on GitHub</a>
                 </div>
             </div>
-            <div class="project-card">
+            <div class="project-card card-animate">
                 <div class="project-image-wrapper">
                     <img src="assets/images/bookstore.png" alt="BookStore">
                 </div>
@@ -165,22 +199,27 @@
                         <span class="tool-badge">Selenium</span>
                         <span class="tool-badge">Java</span>
                     </div>
-                    <a class="github-btn" href="#">View on GitHub</a>
+                    <a class="github-btn" href="https://github.com/kp7200/automation_testSite_bookStore" target="_blank">View on GitHub</a>
                 </div>
             </div>
         </div>
         <div class="cert-contact-row">
-            <div class="certifications" id="certifications">
+            <div class="certifications card-animate" id="certifications">
                 <h2>Certifications &amp; Awards</h2>
                 <ul>
-                    <li>Pet on the Back Award (Tach Maninda, 2024</li>
-                    <li>Brave Award Te'ch Manliura. 2023</li>
-                    <li>Udemy Certifications: Selenium, Te.NG. HRM</li>
-                    <li>Cisco CCNA Module 1&amp;2</li>
-                </ul>
+                    <li>Automation Selenium L1 training from Tech Mahindra, 2022</li>
+                    <li>TestNG - All in One certification from Udemy, 2022</li>
+                    <li>Interview like a Professional HRM, People Skills & Decision Making certifications by Udemy,2024</li>
+                    <li>SIG (Special Interest Group) Batch-1 training from Marwadi University, 2019</li>
+                    <li>Cisco CCNA Certification Module 1 &amp; 2 from Marwadi University, 2019</li>
+                </ul> 
+                 <div class="tools">
+                        <span class="tool-badge">Pet on the back award by Tech Mahindra in Jan, 2024</span>
+                        <span class="tool-badge">Bravo award by Tech Mahindra in June, 2022</span>
+                    </div>
             </div>
-            <div class="contact-form" id="contact">
-                <h2>Contact Me</h2>
+            <div class="contact-form card-animate" id="contact">
+                <h2>Connect 1:1</h2>
                 <form id="contactForm" action="https://script.google.com/macros/s/AKfycbx4GcqOmTRQg-PGvr1KEdbU0Xha4YiFumzLxCus6rWemeFeycciJmIqQV1TBP3ohhhu/exec" method="POST" >
                     <input type="text" name="name" required placeholder="Your Name">
                     <input type="email" name="email" required placeholder="Your Email">
@@ -196,8 +235,8 @@
             <div class="footer-row">
                 <div>© 2025 Keval Parakhiya. All rights reserved.</div>
                 <div class="footer-links">
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px;"><rect x="2" y="4" width="12" height="10" rx="2"/><path d="M2 4l7 6 7-6"/></svg>Email: kevalpo@khiya-kp7200@gmail.com<br>
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px;"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M6 6h.01"/><path d="M8 8v4"/><path d="M10 6h.01"/></svg>Linkedin: inne@in.com/inykevdp0rakhya
+                    <br>
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px;"><rect x="2" y="4" width="12" height="10" rx="2"/><path d="M2 4l7 6 7-6"/></svg>Email: kevalparakhiya.kp7200@gmail.com
                 </div>
             </div>
         </footer>
@@ -303,9 +342,9 @@
         function enableScrollBtn() {
             if (scrollDownBtn) {
                 scrollDownBtn.onclick = function() {
-                    var container = document.querySelector('.container');
-                    if (container) {
-                        container.scrollIntoView({ behavior: 'smooth' });
+                    var aboutSection = document.getElementById('about');
+                    if (aboutSection) {
+                        aboutSection.scrollIntoView({ behavior: 'smooth' });
                     }
                 };
             }
@@ -339,6 +378,55 @@
     scrollToTopBtn.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+    </script>
+    <script>
+    // Animate hero elements when splash screen disappears
+    (function() {
+        var splashScreen = document.getElementById('splashScreen');
+        var heroEls = [
+            document.querySelector('.hero-profile.hero-animate'),
+            document.querySelector('.main-title.hero-animate'),
+            document.querySelector('.subtitle.hero-animate'),
+            document.querySelector('.hero-social-links.hero-animate'),
+            document.querySelector('.scroll-down-btn.hero-animate')
+        ];
+        function animateHero() {
+            heroEls.forEach(function(el, i) {
+                if (el) el.classList.add('in');
+            });
+        }
+        if (splashScreen) {
+            var observer = new MutationObserver(function() {
+                if (splashScreen.style.display === 'none') {
+                    animateHero();
+                    observer.disconnect();
+                }
+            });
+            observer.observe(splashScreen, { attributes: true, attributeFilter: ['style'] });
+        } else {
+            animateHero();
+        }
+    })();
+    </script>
+    <script>
+    // Card entry animation on scroll
+    (function() {
+        var cards = document.querySelectorAll('.card-animate');
+        function animateCards() {
+            var windowBottom = window.innerHeight + window.scrollY;
+            cards.forEach(function(card) {
+                var rect = card.getBoundingClientRect();
+                var cardTop = rect.top + window.scrollY;
+                if (windowBottom > cardTop + 60) {
+                    card.classList.add('in');
+                }
+            });
+        }
+        window.addEventListener('scroll', animateCards);
+        window.addEventListener('resize', animateCards);
+        document.addEventListener('DOMContentLoaded', animateCards);
+        setTimeout(animateCards, 400); // In case of delayed rendering
+    })();
     </script>
 </body>
 </html> 
