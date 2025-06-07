@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Keval Parakhiya</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <header class="blog-header">
+        <nav class="hero-nav">
+            <a href="/index.html">Keval's Portfolio</a>
+            <a href="/blog.html" class="blog-btn" target="_blank" rel="noopener">Blog</a>
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <svg id="theme-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="5.5" stroke="currentColor" stroke-width="2"/>
+                    <g id="sun-rays">
+                        <line x1="12" y1="2" x2="12" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="12" y1="20" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="2" y1="12" x2="4" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="20" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </g>
+                    <g id="moon" style="opacity:0;">
+                        <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" fill="currentColor"/>
+                    </g>
+                </svg>
+            </button>
+        </nav>
+        <h1 class="blog-title">Keval's Blog</h1>
+        <p class="blog-subtitle">Insights on Testing & Space Wonders</p>
+    </header>
+    <main class="blog-main">
+        <section class="nasa-apod-section">
+            <h2>NASA Picture of the Day</h2>
+            <div id="nasa-apod" class="nasa-apod-card">
+                <div class="apod-loading">Loading NASA's picture of the day...</div>
+            </div>
+        </section>
+        <section class="blog-posts-section">
+            <h2>Blog Posts</h2>
+            <div class="blog-posts-list">
+                <!-- Example post, you can add more -->
+                <article class="blog-post-card" data-post-id="0">
+                    <h3>Manual Testing: The Human Touch</h3>
+                    <p>Manual testing is the process of manually checking software for defects. It requires a tester to play the role of an end user and use most of the application's features to ensure correct behavior. Manual testing is fundamental for usability and exploratory testing.</p>
+                </article>
+                <article class="blog-post-card" data-post-id="1">
+                    <h3>API Testing: Ensuring the Backbone</h3>
+                    <p>API testing focuses on verifying the business logic, security, and performance of application programming interfaces. Tools like Postman and REST Assured make it easier to automate and validate API endpoints.</p>
+                </article>
+                <article class="blog-post-card" data-post-id="2">
+                    <h3>Automation Testing: Speed and Reliability</h3>
+                    <p>Automation testing uses specialized tools and scripts to execute tests automatically, increasing test coverage and efficiency. It is ideal for regression, load, and repetitive testing, ensuring faster releases and more reliable results.</p>
+                </article>
+                <article class="blog-post-card" data-post-id="3">
+                    <h3>Database Testing: Ensuring Data Integrity</h3>
+                    <p>Database testing validates the schema, tables, triggers, and data integrity of backend databases. It ensures that data is stored, retrieved, and manipulated correctly, and that transactions are processed as expected.</p>
+                </article>
+                <article class="blog-post-card" data-post-id="4">
+                    <h3>A/B Testing: Data-Driven Decisions</h3>
+                    <p>A/B testing compares two or more versions of a web page or feature to determine which performs better. It helps teams make data-driven decisions to improve user experience and conversion rates.</p>
+                </article>
+                <article class="blog-post-card" data-post-id="5">
+                    <h3>Desktop Application Testing: Beyond the Browser</h3>
+                    <p>Desktop application testing focuses on validating the functionality, usability, and performance of software running on Windows, macOS, or Linux. It covers installation, compatibility, and integration with hardware and other software.</p>
+                </article>
+                <article class="blog-post-card" data-post-id="6">
+                    <h3>Mobile Application Testing: On-the-Go Quality</h3>
+                    <p>Mobile application testing ensures that apps work seamlessly across different devices, operating systems, and network conditions. It includes functional, UI, compatibility, and performance testing for both Android and iOS platforms.</p>
+                </article>
+                <!-- Add more blog posts here -->
+            </div>
+        </section>
+    </main>
+    <footer class="blog-footer">
+        <div>© 2025 Keval Parakhiya. All rights reserved.</div>
+    </footer>
+    <script src="blog.js"></script>
+</body>
+</html> 

@@ -5,6 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keval Parakhiya - QA Engineer Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .blog-btn {
+            position: relative;
+        }
+        
+        .tooltip {
+            visibility: hidden;
+            position: absolute;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 8px 12px;
+            border-radius: 6px;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+
+        .blog-btn:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -27,11 +66,12 @@
                     <a href="#projects">Projects</a>
                     <a href="#certifications">Certifications</a>
                     <a href="#contact">Contact</a>
+                    <a href="#" class="blog-btn" id="blogLink">Blog<span class="tooltip">Coming soon!</span></a>
                 </nav>
                 <button id="theme-toggle" aria-label="Toggle theme">
                     <svg id="theme-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="12" cy="12" r="5.5" stroke="currentColor" stroke-width="2"/>
-                        <g id="sun-rays">
+                        <g id="sun-rays" style="opacity:0;">
                             <line x1="12" y1="2" x2="12" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             <line x1="12" y1="20" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -41,7 +81,7 @@
                             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </g>
-                        <g id="moon" style="opacity:0;">
+                        <g id="moon" style="opacity:1;">
                             <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" fill="currentColor"/>
                         </g>
                     </svg>
@@ -153,7 +193,7 @@
         </div>
         <div class="section-row">
             <div class="section-col card-animate" id="experience">
-                <h2>Professional Experience</h2>
+                <h2>Professional Experience</h2><br>
                 <b>Tech Mahindra (Jan 2022 – May 2025)</b>
                 <ul>
                     <li>Point of Contact (POC) for the Team</li>
@@ -203,6 +243,22 @@
                 </div>
             </div>
         </div>
+        <div class="ongoing-learnings section-col card-animate">
+            <h2>🚀 Learning & Growth</h2>
+            <p>
+                I'm actively expanding my skillset by learning Flutter with Dart to build beautiful, high-performance cross-platform mobile apps. Alongside, I'm diving into UI/UX design to create intuitive, user-centered experiences.
+            </p>
+            <ul>
+                <li>Building responsive UIs using <strong> Flutter widgets</strong> and <strong>Material Design</strong></li>
+                <li>Practicing state management and navigation in Flutter apps</li>
+                <li>Exploring <strong>Figma</strong> and design principles like consistency, hierarchy, and accessibility</li>
+                <li>Creating wireframes, user flows, and interactive prototypes</li>
+                <li>Developing full-stack mini-projects to apply both design and development skills</li>
+            </ul>
+            <p>
+                💡 I believe that blending development with strong design sense leads to smarter products and I'm working towards becoming that kind of tech creator.
+            </p>
+        </div>
         <div class="cert-contact-row">
             <div class="certifications card-animate" id="certifications">
                 <h2>Certifications &amp; Awards</h2>
@@ -225,7 +281,7 @@
                     <input type="email" name="email" required placeholder="Your Email">
                     <textarea name="message" required placeholder="Your Message"></textarea>
                     <div style="display: flex; align-items: center; gap: 12px;">
-                        <div id="formSuccessMsg" class="form-success-msg" style="display:none;"></div>
+                        <div id="formSuccessMsg" class="form-success-msg"></div>
                         <button type="submit"><span class="btn-text">Send Message</span><span class="btn-spinner" style="display:none;"></span></button>
                     </div>
                 </form>
@@ -256,177 +312,13 @@
         </svg>
     </button>
     <script src="./splash.js"></script>
+    <script src="main.js"></script>
     <script>
-    // Reset scroll position and theme on every refresh
-    window.scrollTo(0, 0);
-    localStorage.removeItem('theme');
-
-    // Theme toggle logic
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const sunRays = themeIcon.querySelector('#sun-rays');
-    const moon = themeIcon.querySelector('#moon');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const savedTheme = localStorage.getItem('theme');
-    function setTheme(theme) {
-        document.body.classList.toggle('light-theme', theme === 'light');
-        if (theme === 'light') {
-            sunRays.style.opacity = '1';
-            moon.style.opacity = '0';
-        } else {
-            sunRays.style.opacity = '0';
-            moon.style.opacity = '1';
-        }
-    }
-    setTheme(savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light'));
-    themeToggle.addEventListener('click', () => {
-        const isLight = document.body.classList.toggle('light-theme');
-        const theme = isLight ? 'light' : 'dark';
-        if (isLight) {
-            sunRays.style.opacity = '1';
-            moon.style.opacity = '0';
-        } else {
-            sunRays.style.opacity = '0';
-            moon.style.opacity = '1';
-        }
-        localStorage.setItem('theme', theme);
-    });
-    if (document.body.classList.contains('light-theme')) {
-        sunRays.style.opacity = '1';
-        moon.style.opacity = '0';
-    } else {
-        sunRays.style.opacity = '0';
-        moon.style.opacity = '1';
-    }
-
-    // Contact form AJAX and popup with spinner
-    const contactForm = document.getElementById('contactForm');
-    const formSuccessMsg = document.getElementById('formSuccessMsg');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        // Prevent blog link navigation and show tooltip
+        document.getElementById('blogLink').addEventListener('click', function(e) {
             e.preventDefault();
-            formSuccessMsg.style.display = 'none'; // Hide on new submit
-            const btn = contactForm.querySelector('button[type="submit"]');
-            const btnText = btn.querySelector('.btn-text');
-            const btnSpinner = btn.querySelector('.btn-spinner');
-            btn.disabled = true;
-            btnText.style.display = 'none';
-            btnSpinner.style.display = 'inline-block';
-            const formData = new FormData(contactForm);
-            fetch(contactForm.action, {
-                method: 'POST',
-                body: formData,
-            })
-            .then(response => {
-                btn.disabled = false;
-                btnText.style.display = 'inline';
-                btnSpinner.style.display = 'none';
-                formSuccessMsg.textContent = 'Thank you! Your message has been sent.';
-                formSuccessMsg.style.display = 'block';
-                contactForm.reset();
-            })
-            .catch((err) => {
-                btn.disabled = false;
-                btnText.style.display = 'inline';
-                btnSpinner.style.display = 'none';
-                formSuccessMsg.textContent = 'Thank you! Your message has been sent.';
-                formSuccessMsg.style.display = 'block';
-            });
+            // The native tooltip will show automatically due to the title attribute
         });
-    }
-    </script>
-    <script>
-    (function() {
-        var scrollDownBtn = document.getElementById('scrollDownBtn');
-        var splashScreen = document.getElementById('splashScreen');
-        function enableScrollBtn() {
-            if (scrollDownBtn) {
-                scrollDownBtn.onclick = function() {
-                    var aboutSection = document.getElementById('about');
-                    if (aboutSection) {
-                        aboutSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                };
-            }
-        }
-        // If splash screen is present, wait until it's hidden
-        if (splashScreen && splashScreen.style.display !== 'none') {
-            var observer = new MutationObserver(function() {
-                if (splashScreen.style.display === 'none') {
-                    enableScrollBtn();
-                    observer.disconnect();
-                }
-            });
-            observer.observe(splashScreen, { attributes: true, attributeFilter: ['style'] });
-        } else {
-            enableScrollBtn();
-        }
-    })();
-    </script>
-    <script>
-    // Scroll to Top Button Logic
-    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            scrollToTopBtn.classList.add('show');
-            scrollToTopBtn.classList.remove('hide');
-        } else {
-            scrollToTopBtn.classList.remove('show');
-            scrollToTopBtn.classList.add('hide');
-        }
-    });
-    scrollToTopBtn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    </script>
-    <script>
-    // Animate hero elements when splash screen disappears
-    (function() {
-        var splashScreen = document.getElementById('splashScreen');
-        var heroEls = [
-            document.querySelector('.hero-profile.hero-animate'),
-            document.querySelector('.main-title.hero-animate'),
-            document.querySelector('.subtitle.hero-animate'),
-            document.querySelector('.hero-social-links.hero-animate'),
-            document.querySelector('.scroll-down-btn.hero-animate')
-        ];
-        function animateHero() {
-            heroEls.forEach(function(el, i) {
-                if (el) el.classList.add('in');
-            });
-        }
-        if (splashScreen) {
-            var observer = new MutationObserver(function() {
-                if (splashScreen.style.display === 'none') {
-                    animateHero();
-                    observer.disconnect();
-                }
-            });
-            observer.observe(splashScreen, { attributes: true, attributeFilter: ['style'] });
-        } else {
-            animateHero();
-        }
-    })();
-    </script>
-    <script>
-    // Card entry animation on scroll
-    (function() {
-        var cards = document.querySelectorAll('.card-animate');
-        function animateCards() {
-            var windowBottom = window.innerHeight + window.scrollY;
-            cards.forEach(function(card) {
-                var rect = card.getBoundingClientRect();
-                var cardTop = rect.top + window.scrollY;
-                if (windowBottom > cardTop + 60) {
-                    card.classList.add('in');
-                }
-            });
-        }
-        window.addEventListener('scroll', animateCards);
-        window.addEventListener('resize', animateCards);
-        document.addEventListener('DOMContentLoaded', animateCards);
-        setTimeout(animateCards, 400); // In case of delayed rendering
-    })();
     </script>
 </body>
 </html> 
